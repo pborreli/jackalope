@@ -23,6 +23,9 @@ class FullTextSearchScore implements FullTextSearchScoreInterface
      */
     public function __construct($selectorName)
     {
+        if (null === $selectorName) {
+            throw new \InvalidArgumentException('Required argument selectorName may not be null.');
+        }
         $this->selectorName = $selectorName;
     }
 
